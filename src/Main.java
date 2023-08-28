@@ -9,7 +9,8 @@ public class Main {
 
         Maestro maestro = new Maestro();
         Maestro maestro2 = new Maestro("Habib Jacinto", "hjacinto@uv.mx");
-        //mostrarMenu();
+
+        mostrarMenu();
 
     }
 }
