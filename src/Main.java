@@ -5,12 +5,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!\n");
+        //System.out.println("Hello world!\n");
 
-        Maestro maestro = new Maestro();
-        Maestro maestro2 = new Maestro("Habib Jacinto", "hjacinto@uv.mx");
+        Estudiante estudiante1 = new Estudiante("Rocael López", "rolopez@uv.mx");
+        estudiante1.mostrarNombre();
 
-        mostrarMenu();
+        estudiante1.setNombre("Carlos Cortés");
+        System.out.println(estudiante1.getNombre());
+        estudiante1.setTelefono("7876767676");
+        System.out.println(estudiante1.getTelefono());
+
+        //mostrarMenu();
 
     }
 }
