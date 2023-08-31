@@ -11,6 +11,11 @@ public class Usuario {
         this.correo = correo;
     }
 
+    @Override
+    public String toString() {
+        return "Hola me llamo" + nombre + ", mi correo es " + correo + ", mi matricula es " + matricula + " y mi telefono es " + telefono;
+    }
+
     public String getNombre() {
         return nombre;
     }

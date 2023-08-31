@@ -70,5 +70,14 @@ public class Maestro extends Usuario{
         public void setHora(String hora) {
             this.hora = hora;
         }
+
+        @Override
+        public String toString() {
+            return "Curso disponible: " + fecha + ", Hora: " + hora;
+        }
+    }
+    @Override
+    public String toString() {
+        return super.toString() + ", mi especialidad es " + especialidad + ", mi RFC es " + rfc + ", mis cursos disponibles son " + cursosDisponibles + ".";
     }
 }

@@ -16,8 +16,8 @@ public class Main {
         maestro1.addCursoDisponible(new Date(), "9:00");
         maestro1.addCursoDisponible(new Date(), "10:00");
 
-       for (Maestro.CursoDisponible cursoDisponible : maestro1.getCursosDisponibles()) {
-           System.out.println("Curso disponible: " + cursoDisponible.getFecha() + ", Hora: " + cursoDisponible.getHora());
+       for (Maestro.CursoDisponible cursosDisponibles : maestro1.getCursosDisponibles()) {
+           System.out.println(cursosDisponibles);
        }
 
         /*Estudiante estudiante1 = new Estudiante("Rocael López", "rolopez@uv.mx");
@@ -27,14 +27,9 @@ public class Main {
         System.out.println(estudiante1.getNombre());
         estudiante1.setTelefono("7876767676");
         System.out.println(estudiante1.getTelefono());*/
+        //System.out.println(maestro1);
 
-        Estudiante.mostrarNombre(new Estudiante("Dan Reynolds", "dreynolds@uv.mx"){
-            @Override
-            public void mostrarNombre(){
-                System.out.println("Hola mi nombre es: " + getNombre());
-            }
-        });
+
         }
-
-        //mostrarMenu();
+    //mostrarMenu();
 }
