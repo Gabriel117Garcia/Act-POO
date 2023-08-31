@@ -28,7 +28,13 @@ public class Main {
         estudiante1.setTelefono("7876767676");
         System.out.println(estudiante1.getTelefono());*/
 
-        //mostrarMenu();
+        Estudiante.mostrarNombre(new Estudiante("Dan Reynolds", "dreynolds@uv.mx"){
+            @Override
+            public void mostrarNombre(){
+                System.out.println("Hola mi nombre es: " + getNombre());
+            }
+        });
+        }
 
-    }
+        //mostrarMenu();
 }

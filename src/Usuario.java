@@ -40,6 +40,11 @@ public class Usuario {
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        if (telefono.length() != 10){
+            System.out.println("El número de teléfono debe ser de 10 dígitos");
+        }
+        else{
+            this.telefono = telefono;
+        }
     }
 }
