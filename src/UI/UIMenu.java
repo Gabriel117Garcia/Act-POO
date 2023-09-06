@@ -55,12 +55,12 @@ public class UIMenu {
     private static void loginUsuario(int tipoUsuario){
         //Maestros T1
         //Estudiantes T2
-        //Secretarias
+        //Secretarias T3
         ArrayList<Maestro> maestros = new ArrayList<>();
-        maestros.add(new Maestro("", ""));
-        maestros.add(new Maestro("", ""));
-        maestros.add(new Maestro("", ""));
-        maestros.add(new Maestro("", ""));
+        maestros.add(new Maestro("Javier Pino", "jpino@uv.mx"));
+        maestros.add(new Maestro("Irwing Ibañez", "iribanez@uv.mx"));
+        maestros.add(new Maestro("José Vergara", "jvergara@uv.mx"));
+        maestros.add(new Maestro("Patricia Martinez", "pmartinez@uv.mx"));
 
         ArrayList<Estudiante> estudiantes = new ArrayList<>();
         estudiantes.add(new Estudiante("Diego Domínguez", "didominguez@uv.mx"));
@@ -69,9 +69,10 @@ public class UIMenu {
         estudiantes.add(new Estudiante("Victor Luévano", "vluevano@uv.mx"));
 
         ArrayList<Secretaria> secretarias = new ArrayList<>();
-        secretarias.add(new Secretaria("Luisa González", " "));
-        secretarias.add(new Secretaria("Sofía Martínez", " "));
-        secretarias.add(new Secretaria("Jorge Sánchez", " "));
+        secretarias.add(new Secretaria("Mercedes Moran", "mmoran@uv.mx"));
+        secretarias.add(new Secretaria("Lupita ", "lusecre@uv.mx"));
+        secretarias.add(new Secretaria("Juanita", "juasecre@uv.mx"));
+        secretarias.add(new Secretaria("Lucesita", "lucsecre@uv.mx"));
 
         System.out.println("Ingrese su correo: ");
         Scanner sc = new Scanner(System.in);
@@ -88,8 +89,8 @@ public class UIMenu {
                         UIMaestro.mostrarMenuMaestro();
                     }
                 }
+                System.out.println("Correo incorrecto");
             }
-            System.out.println("Correo incorrecto");
 
             if(tipoUsuario == 2){
                 for( Estudiante estudiante:estudiantes){
@@ -99,6 +100,17 @@ public class UIMenu {
                         UIEstudiante.menuEstudiante();
                     }
                 }
+                System.out.println("Correo incorrecto");
+            }
+
+            if(tipoUsuario == 3){
+                for( Secretaria secretaria:secretarias){
+                    if(secretaria.getCorreo().equals(correo)){
+                        correoCorrecto = true;
+                        UISecretaria.menuSecretaria();
+                    }
+                }
+                System.out.println("Correo incorrecto");
             }
         }while (!correoCorrecto);
 
