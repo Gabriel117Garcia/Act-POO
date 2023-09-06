@@ -1,4 +1,6 @@
-public class Usuario {
+package Model;
+
+public abstract class Usuario {
     //Atributos
     private int id;
     private String nombre;
@@ -51,5 +53,17 @@ public class Usuario {
         else{
             this.telefono = telefono;
         }
+    }
+
+    public void mostrarInformacionUsuario(){
+        System.out.println("Soy un usuario");
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
