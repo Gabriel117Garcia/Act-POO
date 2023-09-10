@@ -12,7 +12,6 @@ public class Maestro extends Usuario{
     //Metodo constructor
     public Maestro(String nombre, String correo){
         super(nombre, correo);
-        System.out.println("Objeto declarado.");
     }
 
     //Metodos - Comportamiento
@@ -55,7 +54,7 @@ public class Maestro extends Usuario{
         private int id;
         private Date fecha;
         private String hora;
-        SimpleDateFormat fechaFormateada = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat fechaFormateada = new SimpleDateFormat("dd/mm/yyyy");
 
         //Constructor
         public CursoDisponible(String fecha, String hora) {
@@ -80,7 +79,11 @@ public class Maestro extends Usuario{
             this.id = id;
         }
 
-        public Date getFecha() {
+        public  String getFecha(String texto) {
+            return fechaFormateada.format(fecha);
+        }
+
+        public  Date getFecha() {
             return fecha;
         }
 

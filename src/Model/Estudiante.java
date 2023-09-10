@@ -1,6 +1,25 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Estudiante extends Usuario{
+
+    // ArrayList de citas
+    private static ArrayList<CitaMaestro> citasMaestro = new ArrayList<>();
+
+    public static ArrayList<CitaMaestro> getCitasMaestro() {
+        return citasMaestro;
+    }
+
+    public static void setCitasMaestro(ArrayList<CitaMaestro> citasMaestro) {
+        Estudiante.citasMaestro = citasMaestro;
+    }
+    public void agregarCitaMaestro(CitaMaestro cita) {
+        citasMaestro.add(cita);
+    }
+
+
+
     //Atributos
     private String semestre;
 

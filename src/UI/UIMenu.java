@@ -16,6 +16,11 @@ public class UIMenu {
     public static Estudiante estudianteLogeado;
     private int tipoUsuario;
 
+    public static  ArrayList<Maestro> maestros = new ArrayList<>();
+    public static ArrayList<Estudiante> estudiantes = new ArrayList<>();
+    public static ArrayList<Secretaria> secretarias = new ArrayList<>();
+
+
     public static void mostrarMenu(){
         System.out.println("..:::Bienvenido:::..");
         System.out.println("Seleccione una opcion: ");
@@ -39,7 +44,7 @@ public class UIMenu {
                     break;
                 case 2:
                     System.out.println("..::Estudiante::..");
-                    UIEstudiante.menuEstudiante();
+                    loginUsuario(2);
                     break;
                 case 3:
                     System.out.println("..::Adiós::..");
@@ -56,19 +61,19 @@ public class UIMenu {
         //Maestros T1
         //Estudiantes T2
         //Secretarias T3
-        ArrayList<Maestro> maestros = new ArrayList<>();
+
         maestros.add(new Maestro("Javier Pino", "jpino@uv.mx"));
         maestros.add(new Maestro("Irwing Ibañez", "iribanez@uv.mx"));
         maestros.add(new Maestro("José Vergara", "jvergara@uv.mx"));
         maestros.add(new Maestro("Patricia Martinez", "pmartinez@uv.mx"));
 
-        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+
         estudiantes.add(new Estudiante("Diego Domínguez", "didominguez@uv.mx"));
         estudiantes.add(new Estudiante("José Manzano", "jomanzano@uv.mx"));
         estudiantes.add(new Estudiante("Carlos Cortés", "cacortes@uv.mx"));
-        estudiantes.add(new Estudiante("Victor Luévano", "vluevano@uv.mx"));
+        estudiantes.add(new Estudiante("Victor Luévano", "viluevano@uv.mx"));
 
-        ArrayList<Secretaria> secretarias = new ArrayList<>();
+
         secretarias.add(new Secretaria("Mercedes Moran", "mmoran@uv.mx"));
         secretarias.add(new Secretaria("Lupita ", "lusecre@uv.mx"));
         secretarias.add(new Secretaria("Juanita", "juasecre@uv.mx"));
