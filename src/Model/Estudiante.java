@@ -1,20 +1,20 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
-public class Estudiante extends Usuario{
+public class Estudiante extends Usuario {
 
     // ArrayList de citas
-    private static ArrayList<CitaMaestro> citasMaestro = new ArrayList<>();
+    private ArrayList<CitaMaestro> citasMaestro = new ArrayList<>();
 
-    public static ArrayList<CitaMaestro> getCitasMaestro() {
+    public ArrayList<CitaMaestro> getCitasMaestro() {
         return citasMaestro;
     }
 
-    public static void setCitasMaestro(ArrayList<CitaMaestro> citasMaestro) {
-        Estudiante.citasMaestro = citasMaestro;
-    }
-    public void agregarCitaMaestro(CitaMaestro cita) {
+    public void agregarCitaMaestro(Maestro maestro, Date fecha, String hora) {
+        CitaMaestro cita = new CitaMaestro(maestro, this);
+        cita.agendar(fecha, hora);
         citasMaestro.add(cita);
     }
 
