@@ -14,6 +14,7 @@ public class UIMenu {
 
     public static Maestro maestroLogeado;
     public static Estudiante estudianteLogeado;
+    public static Secretaria secretariaLogeada;
     private int tipoUsuario;
 
     public static  ArrayList<Maestro> maestros = new ArrayList<>();
@@ -26,7 +27,8 @@ public class UIMenu {
         System.out.println("Seleccione una opcion: ");
         System.out.println("1. Maestros");
         System.out.println("2. Estudiantes");
-        System.out.println("3. Salir");
+        System.out.println("3. Secretarias");
+        System.out.println("4. Salir");
 
         int respuesta;
 
@@ -47,6 +49,10 @@ public class UIMenu {
                     loginUsuario(2);
                     break;
                 case 3:
+                    System.out.println("..::Secretaria::..");
+                    loginUsuario(3);
+                    break;
+                case 4:
                     System.out.println("..::Adiós::..");
                     break;
                 default:
@@ -74,7 +80,7 @@ public class UIMenu {
         estudiantes.add(new Estudiante("Victor Luévano", "viluevano@uv.mx"));
 
 
-        secretarias.add(new Secretaria("Mercedes Moran", "mmoran@uv.mx"));
+        secretarias.add(new Secretaria("Meche", "mmoran@uv.mx"));
         secretarias.add(new Secretaria("Lupita ", "lusecre@uv.mx"));
         secretarias.add(new Secretaria("Juanita", "juasecre@uv.mx"));
         secretarias.add(new Secretaria("Lucesita", "lucsecre@uv.mx"));
@@ -94,7 +100,6 @@ public class UIMenu {
                         UIMaestro.mostrarMenuMaestro();
                     }
                 }
-                System.out.println("Correo incorrecto");
             }
 
             if(tipoUsuario == 2){
@@ -105,18 +110,18 @@ public class UIMenu {
                         UIEstudiante.menuEstudiante();
                     }
                 }
-                System.out.println("Correo incorrecto");
             }
 
             if(tipoUsuario == 3){
                 for( Secretaria secretaria:secretarias){
                     if(secretaria.getCorreo().equals(correo)){
                         correoCorrecto = true;
+                        secretariaLogeada = secretaria;
                         UISecretaria.menuSecretaria();
                     }
                 }
-                System.out.println("Correo incorrecto");
             }
+            System.out.println("Correo incorrecto");
         }while (!correoCorrecto);
 
 
