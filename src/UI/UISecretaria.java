@@ -6,6 +6,7 @@ import Model.Maestro;
 import java.util.List;
 import java.util.Scanner;
 
+import static UI.UIMenu.estudiantes;
 import static UI.UIMenu.secretariaLogeada;
 
 public class UISecretaria {
@@ -48,8 +49,8 @@ public class UISecretaria {
         // Listar estudiantes disponibles
         System.out.println("Estudiantes disponibles:");
         for (int i = 0; i < UIMenu.estudiantes.size(); i++) {
-            Estudiante estudianteSeleccionado = UIMenu.estudiantes.get(i);
-            System.out.println((i + 1) + ". " + estudianteSeleccionado.getNombre());
+            Estudiante estudiante = UIMenu.estudiantes.get(i);
+            System.out.println((i + 1) + ". " + estudiante.getNombre());
         }
         // El usuario selecciona un estudiante
         int respuestaEstudiante = Integer.valueOf(sc.nextLine());
@@ -66,9 +67,11 @@ public class UISecretaria {
             }
             // El usuario selecciona un maestro
             respuestaMaestro = Integer.valueOf(sc.nextLine());
-            if (UIMenu.maestros.get(respuestaMaestro - 1).getCursosDisponibles().isEmpty()) {
+            if (UIMenu.maestros.get(respuestaMaestro).getCursosDisponibles().isEmpty()) {
                 System.out.println("No existen cursos disponibles.");
                 menuSecretaria();
+            }else if (respuestaMaestro < 1 || respuestaMaestro > UIMenu.maestros.size()) {
+                System.out.println("Seleccione una opción correcta.");
             }
         } while (respuestaMaestro < 1 || respuestaMaestro > UIMenu.maestros.size() || UIMenu.maestros.get(respuestaMaestro - 1).getCursosDisponibles().isEmpty());
         Maestro maestroSeleccionado = UIMenu.maestros.get(respuestaMaestro - 1);
@@ -101,7 +104,6 @@ public class UISecretaria {
 
     public static void imprimirTodosLosCursos() {
         List<Maestro> maestros = UIMenu.maestros;
-
         for (Maestro maestro : maestros) {
             List<Maestro.CursoDisponible> cursosDisponibles = maestro.getCursosDisponibles();
             if (!cursosDisponibles.isEmpty()) {
